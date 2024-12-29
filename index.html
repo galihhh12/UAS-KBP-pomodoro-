@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer with Spotify and To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Happy Studying</h1>
+    <div class="container">
+        <div class="timer-section">
+            <h2>Pomodoro Timer</h2>
+            <div class="timer-display" id="timer">25:00</div>
+            <div class="status" id="timerStatus">Work Time</div>
+            
+            <div class="timer-settings">
+                <div class="input-group">
+                    <label for="workTime">Work (min)</label>
+                    <input type="number" id="workTime" value="25" min="1" max="60">
+                </div>
+                <div class="input-group">
+                    <label for="breakTime">Break (min)</label>
+                    <input type="number" id="breakTime" value="5" min="1" max="15">
+                </div>
+            </div>
+            
+            <div class="timer-controls">
+                <button id="startTimer" class="btn-primary">Start</button>
+                <button id="resetTimer" class="btn-warning">Reset</button>
+                <button id="finishTimer" class="btn-danger">Finish</button>
+            </div>
+        </div>
+
+        <div class="music-section">
+            <h2>Study Music</h2>
+            <iframe 
+                src="https://open.spotify.com/embed/playlist/713NCfNGnozksbblACjbbB?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameborder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"
+                class="spotify-embed">
+            </iframe>
+        </div>
+
+        <div class="todo-section">
+            <h2>To-Do List</h2>
+            <div class="todo-input">
+                <input type="text" id="newTodo" placeholder="Add a new task..." />
+                <button id="addTodo" class="btn-primary">Add</button>
+            </div>
+            <ul id="todoList"></ul>
+        </div>
+    </div>
+
+    <div id="breakEndModal" class="modal">
+        <div class="modal-content">
+            <h2>Break Time Ended!</h2>
+            <p>Waktu istirahatmu telah selesai, ayo belajar lagi, atau mau lanjut besok?</p>
+            <div class="modal-buttons">
+                <button id="continueStudying" class="btn-primary">Lanjut Belajar</button>
+                <button id="finishStudying" class="btn-danger">Lanjut Besok</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
